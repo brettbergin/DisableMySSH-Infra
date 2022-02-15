@@ -12,15 +12,26 @@ resource "aws_security_group" "allow_ssh" {
     ipv6_cidr_blocks = ["::/0"]
   }
 
-  egress {
-    from_port        = 0
-    to_port          = 0
-    protocol         = "-1"
+  tags = {
+    Name = "allow_ssh"
+  }
+}
+
+resource "aws_security_group" "allow_https" {
+  name        = "allow_https"
+  description = "Allow https inbound traffic"
+  vpc_id      = aws_vpc.main.id
+
+  ingress {
+    description      = "https From 0.0.0.0"
+    from_port        = 443
+    to_port          = 443
+    protocol         = "tcp"
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
 
   tags = {
-    Name = "allow_ssh"
+    Name = "allow_https"
   }
 }

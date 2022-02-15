@@ -17,7 +17,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "vuln_instance" {
   count           = var.instance_count
   ami             = data.aws_ami.ubuntu.id
-  security_groups = [aws_security_group.allow_ssh.id]
+  security_groups = [aws_security_group.allow_ssh.id, aws_security_group.allow_https.id]
   subnet_id       = aws_subnet.publicsubnets.id
   instance_type   = var.instance_type
   associate_public_ip_address = true
