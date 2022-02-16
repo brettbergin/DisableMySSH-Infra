@@ -5,7 +5,7 @@ This terraform creates a pre-defined number of ec2 instances that have an insecu
 
 # Configuration
 In the variables.tf file, the following configuration is available:
-- `instance_count` (default=`2`) # This is the number of instances to create.
+- `instance_count` (default=`10`) # This is the number of instances to create.
 - `instance_type` (default=`t2.nano`) # This is the instance type to use for each instance.
 - `aws_region` (default=`us-east-1`) # This is the AWS region.
 - `main_vpc_cidr` (default=`100.64.0.0/16`) # This is the CIDR for the VPC.
