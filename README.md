@@ -12,17 +12,22 @@ In the variables.tf file, the following configuration is available:
 - `public_subnets` (default=`100.64.128.0/24`) # This is the CIDR for the public subnet.
 - `private_subnets` (default=`100.64.64.0/24`) # This is the CIDR for the private subnet.
 
-# Generating a terraform plan
+# Initializing terraform
 ```
-$ AWS_PROFILE=MY_PROFILE terraform plan
+$ AWS_PROFILE=MY_PROFILE terraform init
 ```
 
-# Application the changes
+# Generating a terraform plan
+```
+$ AWS_PROFILE=MY_PROFILE terraform init
+```
+
+# Applying the terraform changes
 ```
 $ AWS_PROFILE=MY_PROFILE terraform apply
 ```
 
-# Destroy the changes
+# Destroying the terraform changes
 ```
 $ AWS_PROFILE=MY_PROFILE terraform destroy
 ```
